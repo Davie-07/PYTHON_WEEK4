@@ -34,16 +34,16 @@ def read_and_modify_file():
 
     # Get the input and output filenames from the user
     while True:
-        input_filename = input("Enter the input file name (including path if not in the current directory): ")
+        input_filename = input("Enter the input file name: ")
         try:
             os.path.exists(input_filename)
         except Exception as e:
-            print(f"Error: {e}. Please check your file name and path.")
+            print(f"Error: {e}. Please check your file name or path.")
             continue
         break
 
     while True:
-        output_filename = input("Enter the output file name (including path if desired): ")
+        output_filename = input("Enter the output file name: ")
         try:
             if os.path.exists(output_filename):
                 print("File already exists. Overwrite (y/n)? ")
@@ -54,7 +54,7 @@ def read_and_modify_file():
             else:
                 break
         except Exception as e:
-            print(f"Error: {e}. Please check your output file name and path.")
+            print(f"Error: {e}. Please check your output file name or path.")
             continue
 
     # Ask for a modification function (example: removing comments)
